@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kelompok 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Page */
+        .page {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#" class="active" onclick="showPage('About')">About</a></li>
+            <li><a href="#" onclick="showPage('team')">Tim</a></li>
+            <li><a href="#" onclick="showPage('projects')">Projects</a></li>
+            <li><a href="#" onclick="showPage('Galeri')">Galeri</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div class="page active" id="About">
+            <h1>Tentang Kelompok</h1>
+            <p style="text-align: center; color: #666; line-height: 1.8;">
+                Kami adalah kelompok 6 mahasiswa yang fokus pada pengembangan web dan aplikasi. 
+                Tim kami terdiri dari 5 orang dengan keahlian berbeda yang siap bekerja sama 
+                untuk menghasilkan proyek terbaik.
+            </p>
+        </div>
+
+        <!-- Team Page -->
+        <div class="page" id="team">
+            <h1>Tim Kami</h1>
+            <div class="grid">
+                <div class="card">
+                    <div class="avatar">PS</div>
+                    <h3>Putri Syahrani Adka Istamar</h3>
+                    <p>NPM : 2414372104</p>
+                    <p>Ketua Kelompok</p>
+                </div>
+                <div class="card">
+                    <div class="avatar">EA</div>
+                    <h3>Egi Arisafitra</h3>
+                    <p>NPM: 2414</p>
+                </div>
+                <div class="card">
+                    <div class="avatar">Sy</div>
+                    <h3>Syofia</h3>
+                    <p>NPM: 2414</p>
+                </div>
+                <div class="card">
+                    <div class="avatar">FS</div>
+                    <h3>Fauzi Sahar Irawan</h3>
+                    <p>NPM: 2414</p>
+                </div>
+                <div class="card">
+                    <div class="avatar">FS</div>
+                    <h3>Juan Rogaete Situmeang</h3>
+                    <p>NPM: 2414</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Page -->
+        <div class="page" id="projects">
+            <h1>Projects Kami</h1>
+            <div class="grid">
+                <div class="card">
+                    <h3>📱 Mobile App</h3>
+                    <p>Aplikasi e-commerce dengan fitur lengkap</p>
+                </div>
+                <div class="card">
+                    <h3>🌐 Website</h3>
+                    <p>Company profile modern dan responsive</p>
+                </div>
+                <div class="card">
+                    <h3>📊 Dashboard</h3>
+                    <p>Analytics dashboard dengan visualisasi data</p>
+                </div>
+                <div class="card">
+                    <h3>🎓 E-Learning</h3>
+                    <p>Platform pembelajaran online interaktif</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div class="page" id="contact">
+            <h1>Galeri Kami</h1>
+            <form onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea rows="5" required></textarea>
+                </div>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageName) {
+            // Sembunyikan semua page
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Tampilkan page yang dipilih
+            document.getElementById(pageName).classList.add('active');
+            
+            // Update active link
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Pesan terkirim! Terima kasih.');
+            e.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html>
